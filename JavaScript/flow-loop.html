@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript 流程控制 : 迴圈</title>
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body>
+        <script>
+            // while 迴圈
+            let n=0;
+            while(n<5){
+                console.log(n);
+                n++;
+            }
+            // for 迴圈
+            for(let n=0;n<5;n++){
+                console.log(n);
+            }
+
+
+            //計算一個1+2+3+...+10 的結果
+            // for 版本
+            let sum=0;
+            for(let n=1;n<=10;n++){
+                sum=sum+n;
+            }
+            console.log(sum);
+            // while 版本
+            var num=0;
+            var total=0;
+            while(num<=10){
+                total=total+num;
+                num++
+            }
+            console.log(total);
+
+
+
+        </script>
+    </body>
+</html>

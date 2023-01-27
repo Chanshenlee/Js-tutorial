@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript : HTML DOM 網頁畫面操作</title>
+        <!--
+        <style>
+            .text{text-decoration: underline;font-weight: bold;}
+        </style>
+         -->
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body>
+        <!--
+        <h3>HTML DOM畫面操作</h3>
+        <div id="content">練習網頁畫面的操作</div>
+        <button onclick="change();">點我</button>
+        <script>
+            function change(){
+                //取得標籤物件
+                let elem=document.querySelector("#content");
+                
+
+                //操作標籤物件
+                elem.innerHTML="對特定的標籤操作";
+                elem.className="text";
+                elem.style.fontSize="30px"; // font-size:30px
+                elem.style.color="red";
+            }
+        </script>
+        -->
+            <div>
+                <span onmouseover="chantoabout();">關於我</span>
+                <span onmouseover="changetoexps();">學經歷</span>
+            </div>
+            <hr/>
+            <div id="about">大家好，我是昶昇</div>
+            <div id="exps" style="display: none">我是世新大學資管系畢業</div>
+
+            <script>
+                function changetoexps(){
+                    //先取得操作的標籤
+                    let aboutDiv=document.querySelector("#about"); // document.querySelector("xxx")根據給定的selector條件，回傳第一個 或 所有符合條件的 NodeList。
+                    let expsDiv=document.querySelector("#exps");
+
+                    //再討論標籤的操作
+                    aboutDiv.style.display="none";
+                    expsDiv.style.display="block";
+                }
+                function chantoabout(){
+                    let aboutDiv=document.querySelector("#about");
+                    let expsDiv=document.querySelector("#exps");
+
+                    //再討論標籤的操作
+                    aboutDiv.style.display="block";
+                    expsDiv.style.display="none";
+
+                }
+
+            </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript Hoisting宣告提升</title>
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body>
+        <script>
+           x=10;//給定初始資料
+           alert(x);//使用變數 alert是彈跳視窗的寫法
+           var x;//宣告變數
+           //雖然正常來說是要先宣告變數->給定資料->使用變數，但Javascript有宣告提升的特性，會將宣告變數拉到最前面。
+           //var x=10; 只會把var x提到前面，x=10會留在原地
+            
+           var y;
+           console.log(y);
+           y=20;
+           //這邊一樣有Hoisting的效果，雖然console.log是顯示出undefined
+           //但還是與y is not defind這個錯誤訊息bug不同，因為y已經在創造階段提供了記憶體空間。
+
+           test();//呼叫函式
+           function test() { //函式陳述式宣告
+            alert("Hello");
+           }
+           //在函式裡的情況也一樣，有Hoisting的效果 
+            
+           test2();
+           var test2=function(){ //函式表達式宣告
+            alert("Hello");
+           }
+           //另一種的函式寫法只會把var test2 這個變數宣告拉到最前面而已，所以會出現找不到function的bug。
+            
+            //函式表達式
+            
+           var callname = function(){
+              console.log('我是昶昇');
+           }
+
+            //函式陳述式
+           
+           function callname(){
+              console.log('我是家丞');
+           }
+
+           callname();
+           //console.log會印出我是昶昇
+           //因為函式陳述式提升會優先於變數而在創造階段就被提出了，表達式是只有先提出變數而已，到了執行階段以後，函式陳述式就已經沒有東西可以給值了，但是表達式有值可以賦予，所以會印出我是昶昇。
+        </script>
+    </body>
+</html>

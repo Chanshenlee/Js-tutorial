@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript 運算符號</title>
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body>
+        <script>
+            /*
+            //算術運算:+,-,*,/,%
+            let x=7%3;
+            console.log(x);
+            // 指定運算 : =,+=,-=,*=,/=,%=
+            x+1;  // 會印出 1 因為沒有給一個變數去儲存2，X依然是1
+            console.log(x); 
+            x=x+1 //x=x+1
+            console.log(x); 
+            x-=4; //x=x-4
+            console.log(x); 
+            // 比較運算 >,<,>=,<=,==
+            x=3>4;
+            console.log(x);
+            x=3<=4;
+            console.log(x);
+            //單元運算 : !,++,--
+            x=!false; // !後面接布林值，去做布林值的反轉。
+            console.log(x);
+            x=3
+            x++;//x=x+1,x+=1
+            console.log(x)
+            //邏輯運算 : &&,||
+            let test=true&&true;
+            console.log(test);
+            */
+
+            //請使用者輸入兩個數字，得到乘法的結果
+            //要求使用者輸入:prompt(字幕,字串) 回傳使用者的輸入
+            let n1=prompt("請輸入一個數字",""); //變數名稱=指令回傳的資料
+            let n2=prompt("請輸入一個數字","");
+            let result=Number(n1)+Number(n2); //Number將字串轉成整數
+            console.log(result);
+
+
+        </script>
+    </body>
+</html>

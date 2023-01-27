@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript 流程控制 : 迴圈指令</title>
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body>
+        <script>
+            // break 指令
+            let n=0;
+            while(n<5){
+                if(n==3){
+                    break; //強迫結束迴圈
+                }
+                console.log(n)
+                n++;
+            }
+            // continue 指令
+            for(let n=0;n<5;n++){
+                if(n%2==0) //如果n除以2的餘數是0:n是偶數
+                {
+                    continue; //條件成立時，中斷該次的迴圈，繼續下一次的。
+                }
+                console.log(n);
+            }
+
+        </script>
+    </body>
+</html>

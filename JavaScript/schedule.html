@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript 自動排程 Schedule</title>
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body onload="init();">
+        <!-- onload是當網頁載入完成，觸發特定的 JavaScript 函式去執行的工作 -->
+        <span id="timer">3</span>
+        <script>
+            var timer;
+            function init(){
+                timer=document.getElementById("timer");
+                window.setTimeout(countdown,1000);//setTimeout(function,delay)
+                //延遲了某段時間 (單位為毫秒) 之後，才去執行「一次」指定的程式碼，並且會回傳一個獨立的 timer ID
+
+                //另一個為setInterval(function,delay):會不斷重複執行，屬於非同步
+
+
+            }
+            function countdown(){
+                timer.innerHTML=timer.innerHTML-1;
+                if(timer.innerHTML>0){ //還沒倒數到 0 ，繼續倒數
+                    window.setTimeout(countdown,1000);
+                }else{ //若是已經倒數到 0 ，做該做的工作
+                    document.location="http://www.yahoo.com.tw/";
+                }
+            }
+        </script>
+    </body>
+</html>

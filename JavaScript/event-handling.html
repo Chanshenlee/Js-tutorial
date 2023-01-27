@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript : 事件處理</title>
+        <style>
+
+            .btn{
+                background-color: #ffcccc;
+                padding: 8px;border-radius: 5px;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body>
+        <h3>事件處理的練習</h3>
+        <span class="btn"
+        onmouseover="over(this);" onmouseout="out(this);"onmousedown="down(this);" onmouseup="up(this);" >點我
+        </span>
+        <!-- span 沒有意思，就只是一個inline而已 
+             div 是一個block
+        -->
+        <!-- onmouseover 滑鼠移入套用該函式
+             onmousedown 滑鼠移出套用該函式
+             onmouseup   滑鼠點下去後放開套用該函式
+             onmousedown 滑鼠點下去套用該函式
+
+        -->
+        <script>
+            function over(elem){
+                elem.style.backgroundColor="red";
+            }
+            function out(elem){
+                elem.style.backgroundColor="#ffcccc";
+            }
+            function up(elem){
+                elem.style.fontWeight="normal";
+            }
+            function down(elem){
+                elem.style.fontWeight="bold";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+        <!-- 告訴瀏覽器，網頁編碼是 utf-8 -->
+        <meta charset="utf-8"  />
+        <title>JavaScript : AJAX網路連線實務 </title>
+        <!-- Ajax 是 jQuery 的技術之一 稱為非同步請求
+        非同步請求：不知道事件甚時會發生，但可以預先把要發生的函式準備好。 -->
+        <!-- jQuery 是一套跨瀏覽器的JS函式庫，用來簡化HTML 和 Javascript 的操作。 -->
+    </head>
+    <!-- 網頁的主畫面，都寫在 body 標籤中-->
+    <body>
+        <h3>AJAX / XHR 網路連線實務</h3>
+        <button onclick="getData();">連線取得資料</button>
+        <div id="result"></div>
+        <script>
+            /*
+            測試用的連線網址:
+            https://cwpeng.github.io/live-records-samples/data/products.json
+            */
+           function getData(){
+            // 利用 fetch 進行連線並取得資料
+            fetch("https://cwpeng.github.io/live-records-samples/data/products.json").then(function(response){
+                return response.json();
+            }).then(function(data){
+                //已經取得資料，把資料呈現在畫面上
+                let result=document.querySelector("#result");
+
+
+                // document.querySelector(selector)
+                // selector必須是有效的css選擇棄字符串
+                // 選id元素時：（'#title');
+                // 選class元素時：（'.title');
+
+
+                result.innerHTML="";//先把畫面清空
+                for(let i=0;i<data.length;i++){
+                    let product=data[i];
+                    result.innerHTML+="<div>"+product.name+","+product.price+","+product.description+"</div>";
+                }
+            });
+           } 
+        </script>
+    </body>
+</html>
